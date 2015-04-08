@@ -7,8 +7,8 @@ DATA:
   gr_alv     TYPE REF TO cl_salv_table,
   gr_header  TYPE REF TO cl_salv_form_text,
   gv_lines   TYPE i,
-  gv_message TYPE string
-  gv_table   TYPE TABLE OF mara.
+  gv_message TYPE string,
+  gv_table   TYPE TABLE OF mara. " any table
   
 DESCRIBE TABLE gt_table LINES gv_lines.
 MOVE gv_lines TO gv_message.
@@ -29,4 +29,4 @@ gr_alv->set_top_of_list( value = gr_header ).
 
 gr_alv->get_columns( )->set_optimize( ).
 
-gr_alv->display( )
+gr_alv->display( ).
